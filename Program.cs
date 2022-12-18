@@ -21,17 +21,18 @@ namespace JSON2LVL
                 if (level != null)
                 {
                     FileStream fs = File.Create(args[0].Substring(0, args[0].Length-5) + ".lvl");
-                    GZipStream gs = new GZipStream(fs, System.IO.Compression.CompressionLevel.Optimal);
+                    GZipStream gs = new GZipStream(fs, CompressionLevel.Optimal);
                     BinaryWriter bw = new BinaryWriter(gs);
 
-                    bw.Write((uint)level.width);
-                    bw.Write((uint)level.height);
+                    bw.Write((UInt32)level.width);
+                    bw.Write((UInt32)level.height);
+                    bw.Write((UInt32)level.layers.Length);
 
                     for (int i = 0; i < level.layers.Length; i++)
                     {
                         for (int j = 0; j < level.layers[i].data.Length; j++)
                         {
-                            bw.Write((ushort)(level.layers[i].data[j] + 1));
+                            bw.Write((UInt16)(level.layers[i].data[j] + 1));
                         }
                     }
 
