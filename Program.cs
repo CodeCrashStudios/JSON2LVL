@@ -9,14 +9,17 @@ namespace JSON2LVL
         {
             if (args.Length > 0)
             {
+                Console.WriteLine("Reading file \"" + args[0]+"\"...");
                 string jsonString = File.ReadAllText(args[0]);
-                Console.WriteLine(jsonString);
-                Level? level = JsonSerializer.Deserialize<Level>(jsonString);
+                Console.WriteLine("Done!");
 
+                Console.WriteLine("Deserializing JSON...");
+                Level? level = JsonSerializer.Deserialize<Level>(jsonString);
+                Console.WriteLine("Done!");
+
+                Console.WriteLine("Writing file...");
                 if (level != null)
                 {
-                    Console.WriteLine(level.width);
-
                     FileStream fs = File.Create(args[0].Substring(0, args[0].Length-5) + ".lvl");
                     GZipStream gs = new GZipStream(fs, System.IO.Compression.CompressionLevel.Optimal);
                     BinaryWriter bw = new BinaryWriter(gs);
@@ -35,6 +38,11 @@ namespace JSON2LVL
                     bw.Close();
                     gs.Close();
                     fs.Close();
+                    Console.WriteLine("Done!");
+                }
+                else
+                {
+                    Console.WriteLine("Error Could not Write file. There may be a problem with your JSON file, make sure it is formated correctly.");
                 }
             }
         }
