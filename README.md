@@ -39,6 +39,7 @@ fs.Close();
 ## What is the files structure?
 * The first 4 bytes are an unsigned int for the width of the map.
 * The second 4 bytes are an unsigned int for the height of the map.
+* The third 4 bytes are an unsigned int for the layer count of the map.
 * Anything after that is all the tile IDs represented as a single array of unsigned shorts.
 
 The name of the map should be the filename so it is not stored.
