@@ -4,7 +4,37 @@ This tool converts a Tiled JSON file to a compressed binary file.
 ![alt text](Thumbnail.png)
 
 ## How do I use it?
-First in Tiled you need to export your tile map as a JSON file. Next just drag and drop the JSON file onto the executable and it will take care of the rest. The exported file should be at the same location as the file you want to be converted. It may take a bit to process larger files since compressig them takes some time. I do plan on allowing you to change the compression level or disable it completely in the future. I also plan on giving examples of how to load it.
+First in Tiled you need to export your tile map as a JSON file. Next just drag and drop the JSON file onto the executable and it will take care of the rest. The exported file should be at the same location as the file you want to be converted. It may take a bit to process larger files since compressig them takes some time. I do plan on allowing you to change the compression level or disable it completely in the future.
+
+## How do I load it?
+Here's an example of how to load it into a UInt16 array:
+```CSharp
+//Here is the data, you could make it a 3d array if you would like, this example just puts everythig into one array
+UInt16[] _data;
+
+//Creates the steams and reader
+FileStream fs = File.OpenRead(Game1.content.RootDirectory+resource);
+GZipStream gs = new GZipStream(fs, CompressionLevel.Optimal);
+BinaryReader br = new BinaryReader(gs);
+
+//Reads the file header
+Width = br.ReadUInt32();
+Height = br.ReadUInt32();
+LayerCount = br.ReadUInt32();
+
+data = new UInt16[Width*Height*LayerCount];
+
+//Reads all of the data
+for(int i = 0; i < _data.Length; i++)
+{
+    data[i] = br.ReadUInt16();
+}
+
+//Don't forget to close the steams and reader!
+br.Close();
+gs.Close();
+fs.Close();
+```
 
 ## What is the files structure?
 * The first 4 bytes are an unsigned int for the width of the map.
