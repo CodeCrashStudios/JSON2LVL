@@ -12,7 +12,7 @@ Here's an example of how to load it into a UInt16 array:
 //Here is the data, you could make it a 3d array if you would like, this example just puts everythig into one array
 UInt16[] data;
 
-//Creates the steams and reader
+//Creates the streams and reader
 FileStream fs = File.OpenRead(RESOURCE_PATH_HERE);//Put the path to your resource here
 GZipStream gs = new GZipStream(fs, CompressionLevel.Optimal);
 BinaryReader br = new BinaryReader(gs);
