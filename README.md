@@ -22,7 +22,7 @@ Width = br.ReadUInt32();
 Height = br.ReadUInt32();
 LayerCount = br.ReadUInt32();
 
-data = new UInt16[Width*Height*LayerCount];
+data = new UInt16[Width * Height * LayerCount];
 
 //Reads all of the data
 for(int i = 0; i < _data.Length; i++)
