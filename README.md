@@ -4,7 +4,7 @@ This tool converts a Tiled JSON file to a compressed binary file.
 ![alt text](Thumbnail.png)
 
 ## How do I use it?
-Just drag and drop the JSON file onto the executable and it will take care of the rest. The exported file should be at the same location as the file you want to be converted. It may take a bit to process larger files since compressig them takes some time. I do plan on allowing you to change the compression level or disable it completely in the future. I also plan on giving examples of how to load it.
+First in Tiled you need to export your tile map as a JSON file. Next just drag and drop the JSON file onto the executable and it will take care of the rest. The exported file should be at the same location as the file you want to be converted. It may take a bit to process larger files since compressig them takes some time. I do plan on allowing you to change the compression level or disable it completely in the future. I also plan on giving examples of how to load it.
 
 ## What is the files structure?
 * The first 4 bytes are an unsigned int for the width of the map.
