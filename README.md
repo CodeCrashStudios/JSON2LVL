@@ -14,7 +14,7 @@ UInt16[] data;
 
 //Creates the streams and reader
 FileStream fs = File.OpenRead(RESOURCE_PATH_HERE);//Put the path to your resource here
-GZipStream gs = new GZipStream(fs, CompressionLevel.Optimal);
+GZipStream gs = new GZipStream(fs, CompressionMode.Decompress);
 BinaryReader br = new BinaryReader(gs);
 
 //Reads the file header
