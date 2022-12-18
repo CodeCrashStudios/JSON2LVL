@@ -10,10 +10,10 @@ First in Tiled you need to export your tile map as a JSON file. Next just drag a
 Here's an example of how to load it into a UInt16 array:
 ```CSharp
 //Here is the data, you could make it a 3d array if you would like, this example just puts everythig into one array
-UInt16[] _data;
+UInt16[] data;
 
 //Creates the steams and reader
-FileStream fs = File.OpenRead(Game1.content.RootDirectory+resource);
+FileStream fs = File.OpenRead(RESOURCE PATH HERE);//Put the path to your resource here
 GZipStream gs = new GZipStream(fs, CompressionLevel.Optimal);
 BinaryReader br = new BinaryReader(gs);
 
