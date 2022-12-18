@@ -30,7 +30,7 @@ for(int i = 0; i < _data.Length; i++)
     data[i] = br.ReadUInt16();
 }
 
-//Don't forget to close the steams and reader!
+//Don't forget to close the streams and reader!
 br.Close();
 gs.Close();
 fs.Close();
