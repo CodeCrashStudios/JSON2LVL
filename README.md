@@ -1,6 +1,8 @@
 # JSON2LVL
 This tool converts a Tiled Json file to a compressed binary file.
 
+![alt text](Thumbnail.png)
+
 ## How do I use it?
 Just simply drag and drop the json file onto the exe and it will do the rest. The exported file should be at the same location of the file you want converted once its done. It may take a bit to process larger files. I do plan on allowing you to change the compression level or disable it in the future. I also pan on giving examples on how to load it.
 
