@@ -4,12 +4,12 @@ This tool converts a Tiled JSON file to a compressed binary file.
 ![alt text](Thumbnail.png)
 
 ## How do I use it?
-First in Tiled you need to export your tile map as a JSON file. Next just drag and drop the JSON file onto the executable and it will take care of the rest. The exported file should be at the same location as the file you want to be converted. It may take a bit to process larger files since compressig them takes some time. I do plan on allowing you to change the compression level or disable it completely in the future.
+First in Tiled you need to export your tile map as a JSON file. Next just drag and drop the JSON file onto the executable and it will take care of the rest. The exported file should be at the same location as the file you want to be converted. It may take a bit to process larger files since compressing them takes some time. I do plan on allowing you to change the compression level or disable it completely in the future.
 
 ## How do I load it?
 Here's an example of how to load it into a UInt16 array:
 ```CSharp
-//Here is the data, you could make it a 3d array if you would like, this example just puts everythig into one array
+//Here is the data, you could make it a 3d array if you would like, this example just puts everything into one array
 UInt16[] data;
 
 //Creates the streams and reader
